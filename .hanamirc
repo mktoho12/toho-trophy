@@ -1,0 +1,4 @@
+project=toho_trophy
+architecture=container
+test=minitest
+template=erb
