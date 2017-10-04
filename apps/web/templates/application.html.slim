@@ -1,0 +1,25 @@
+doctype html
+html lang="ja"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    = stylesheet 'materialize.min'
+
+    title 東方戦勝碑 ~ toho torophy
+    #{favicon}
+  body
+    header
+      nav
+        .nav-wrapper
+          .brand-logo
+            a href="#{routes.root_path}" 東方戦勝碑 ~ toho torophy ~
+          - if user_signed_in?
+            .right
+              = link_to 'ログアウト', '/users/sign_out', method: 'delete', class: 'btn btn-warning'
+          - else
+            .right
+              = link_to 'アカウント作成', '/users/new', class: 'btn btn-success'
+              = link_to 'ログイン', '/users/sign_in', class: 'btn btn-success'
+    = yield
+    = javascript 'jquery-3.2.1.min'
+    = javascript 'materialize.min'
